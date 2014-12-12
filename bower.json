@@ -1,0 +1,21 @@
+{
+  "name": "inuit-responsive-text-align",
+  "version": "0.1.0",
+  "homepage": "https://github.com/TryGenesis/trumps.helper.text-align-responsive",
+  "authors": [
+    "Dennis Heibuelt <dennis@csshugs.com>"
+  ],
+  "description": "Responsive text-align helper classes",
+  "main": "_trumps.helper.text-align-responsive.scss",
+  "keywords": [
+    "inuitcss",
+    "oocss",
+    "css"
+  ],
+  "license": "Apache",
+  "dependencies": {
+    "inuit-responsive-settings": "~0.1.3",
+    "inuit-responsive-tools": "~0.1.3",
+    "inuit-text-align": "~0.1.1"
+  }
+}

@@ -1,0 +1,61 @@
+/*------------------------------------*\
+    #TEXT-ALIGN-RESPONSIVE
+\*------------------------------------*/
+
+$inuit-enable-text-align--responsive--left:     false !default;
+$inuit-enable-text-align--responsive--right:    false !default;
+$inuit-enable-text-align--responsive--center:   false !default;
+
+
+
+@each $breakpoint in $breakpoints {
+
+    $alias:     nth($breakpoint, 1);
+    $condition: nth($breakpoint, 2);
+
+    // We don’t want to generate responsive text-align for retina devices.
+    @if ($alias != "retina") {
+
+        @include media-query($alias) {
+
+            @if ($inuit-enable-text-align--responsive--left == true) {
+
+                /**
+                 * Text-align responsive #{$alias}
+                 */
+                .#{$alias}-text--left,
+                %#{$alias}-text--left{
+                    text-align: left !important;
+                }
+
+            }
+
+            @if ($inuit-enable-text-align--responsive--right == true) {
+
+                /**
+                 * Text-align responsive #{$alias}
+                 */
+                .#{$alias}-text--right,
+                %#{$alias}-text--right{
+                    text-align: right !important;
+                }
+
+            }
+
+            @if ($inuit-enable-text-align--responsive--center == true) {
+
+                /**
+                 * Text-align responsive #{$alias}
+                 */
+                .#{$alias}-text--center,
+                %#{$alias}-text--center{
+                    text-align: center !important;
+                }
+
+            }
+
+        } // Close retina check.
+
+    } // Close media query.
+
+} // Close breakpoints loop.
