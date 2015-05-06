@@ -11,7 +11,6 @@ $inuit-enable-text-align--responsive--center:   false !default;
 @each $breakpoint in $breakpoints {
 
     $alias:     nth($breakpoint, 1);
-    $condition: nth($breakpoint, 2);
 
     // We don’t want to generate responsive text-align for retina devices.
     @if ($alias != "retina") {
@@ -21,10 +20,9 @@ $inuit-enable-text-align--responsive--center:   false !default;
             @if ($inuit-enable-text-align--responsive--left == true) {
 
                 /**
-                 * Text-align responsive #{$alias}
+                 * Text-align left responsive #{$alias}.
                  */
-                .#{$alias}-text--left,
-                %#{$alias}-text--left{
+                .u-text-left-#{$alias} {
                     text-align: left !important;
                 }
 
@@ -33,10 +31,9 @@ $inuit-enable-text-align--responsive--center:   false !default;
             @if ($inuit-enable-text-align--responsive--right == true) {
 
                 /**
-                 * Text-align responsive #{$alias}
+                 * Text-align right responsive #{$alias}.
                  */
-                .#{$alias}-text--right,
-                %#{$alias}-text--right{
+                .u-text-right-#{$alias} {
                     text-align: right !important;
                 }
 
@@ -45,10 +42,9 @@ $inuit-enable-text-align--responsive--center:   false !default;
             @if ($inuit-enable-text-align--responsive--center == true) {
 
                 /**
-                 * Text-align responsive #{$alias}
+                 * Text-align center responsive #{$alias}.
                  */
-                .#{$alias}-text--center,
-                %#{$alias}-text--center{
+                .u-text-center-#{$alias} {
                     text-align: center !important;
                 }
 
